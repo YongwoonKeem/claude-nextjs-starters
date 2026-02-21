@@ -1,17 +1,4 @@
-import {
-  LayoutDashboard,
-  BarChart2,
-  Users,
-  FileText,
-  Settings,
-  Zap,
-  Shield,
-  Palette,
-  Smartphone,
-  Plug,
-  TrendingUp,
-} from "lucide-react";
-import { NavItem, Feature, StatsData, SiteConfig } from "@/types";
+import { SiteConfig } from "@/types";
 
 // 사이트 설정
 export const SITE_CONFIG: SiteConfig = {
@@ -20,109 +7,109 @@ export const SITE_CONFIG: SiteConfig = {
   baseUrl: "https://example.com",
 };
 
-// 대시보드 사이드바 아이템
-export const SIDEBAR_ITEMS: NavItem[] = [
+// 대시보드 사이드바 아이템 (아이콘 ID만 저장)
+export const SIDEBAR_ITEMS_CONFIG = [
   {
     id: "dashboard",
     label: "대시보드",
     href: "/dashboard",
-    icon: <LayoutDashboard className="w-5 h-5" />,
+    iconId: "dashboard",
   },
   {
     id: "analytics",
     label: "분석",
     href: "/dashboard/analytics",
-    icon: <BarChart2 className="w-5 h-5" />,
+    iconId: "analytics",
   },
   {
     id: "users",
     label: "사용자",
     href: "/dashboard/users",
-    icon: <Users className="w-5 h-5" />,
+    iconId: "users",
   },
   {
     id: "documents",
     label: "문서",
     href: "/dashboard/documents",
-    icon: <FileText className="w-5 h-5" />,
+    iconId: "documents",
   },
   {
     id: "settings",
     label: "설정",
     href: "/dashboard/settings",
-    icon: <Settings className="w-5 h-5" />,
+    iconId: "settings",
   },
 ];
 
-// 랜딩 페이지 피처
-export const FEATURES: Feature[] = [
+// 랜딩 페이지 피처 (아이콘 ID만 저장)
+export const FEATURES_CONFIG = [
   {
     id: "performance",
     title: "⚡ 번개 같은 속도",
     description: "Next.js 최적화와 자동 코드 스플리팅으로 최고의 성능을 제공합니다.",
-    icon: <Zap className="w-8 h-8" />,
+    iconId: "zap",
   },
   {
     id: "type-safe",
     title: "🛡️ 타입 안전성",
     description: "TypeScript와 함께 런타임 오류를 미리 방지하고 개발 경험을 향상시킵니다.",
-    icon: <Shield className="w-8 h-8" />,
+    iconId: "shield",
   },
   {
     id: "components",
     title: "🎨 완성된 UI 컴포넌트",
     description: "shadcn/ui와 TailwindCSS로 구성된 즉시 사용 가능한 컴포넌트 라이브러리입니다.",
-    icon: <Palette className="w-8 h-8" />,
+    iconId: "palette",
   },
   {
     id: "dark-mode",
     title: "🌓 다크모드 지원",
     description: "next-themes를 활용한 자동 다크모드 전환 및 테마 영속화 기능을 제공합니다.",
-    icon: <Smartphone className="w-8 h-8" />,
+    iconId: "moon",
   },
   {
     id: "responsive",
     title: "📱 완벽한 반응형",
     description: "모든 기기에서 완벽하게 작동하는 모바일 우선 디자인 패턴을 적용했습니다.",
-    icon: <Smartphone className="w-8 h-8" />,
+    iconId: "smartphone",
   },
   {
     id: "extensible",
     title: "🔧 확장 가능한 구조",
     description: "모듈식 구조로 설계되어 새로운 기능 추가와 커스터마이징이 용이합니다.",
-    icon: <Plug className="w-8 h-8" />,
+    iconId: "plug",
   },
 ];
 
-// 더미 통계 데이터
-export const STATS_DATA: StatsData[] = [
+// 더미 통계 데이터 (아이콘 ID만 저장)
+export const STATS_DATA_CONFIG = [
   {
     id: "revenue",
     title: "총 매출",
     value: "$12,450",
     change: 12.5,
-    icon: <TrendingUp className="w-5 h-5" />,
+    iconId: "trending-up",
   },
   {
     id: "users",
     title: "활성 사용자",
     value: "2,342",
     change: 8.2,
-    icon: <Users className="w-5 h-5" />,
+    iconId: "users",
   },
   {
     id: "conversion",
     title: "전환율",
     value: "4.2%",
     change: -2.1,
-    icon: <TrendingUp className="w-5 h-5" />,
+    iconId: "trending-up",
   },
   {
     id: "engagement",
     title: "참여도",
     value: "68%",
     change: 5.8,
-    icon: <TrendingUp className="w-5 h-5" />,
+    iconId: "trending-up",
   },
 ];
 

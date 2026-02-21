@@ -7,7 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
-import { SIDEBAR_ITEMS } from "@/lib/constants";
+import { SIDEBAR_ITEMS_CONFIG } from "@/lib/constants";
+import { getIcon } from "@/lib/icon-map";
 import { useSidebar } from "@/hooks/use-sidebar";
 import { cn } from "@/lib/utils";
 
@@ -37,7 +38,7 @@ export function MobileSidebar() {
 
           {/* 네비게이션 아이템 */}
           <nav className="space-y-1 px-2">
-            {SIDEBAR_ITEMS.map((item) => {
+            {SIDEBAR_ITEMS_CONFIG.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link key={item.id} href={item.href} onClick={closeMobileSidebar}>
@@ -45,7 +46,7 @@ export function MobileSidebar() {
                     variant={isActive ? "default" : "ghost"}
                     className="w-full justify-start"
                   >
-                    {item.icon}
+                    {getIcon(item.iconId, { className: "w-5 h-5" })}
                     <span className="ml-2">{item.label}</span>
                   </Button>
                 </Link>

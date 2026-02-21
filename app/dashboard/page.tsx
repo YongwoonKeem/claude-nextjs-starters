@@ -4,7 +4,8 @@ import { Header } from "@/components/layout/header";
 import { Sidebar } from "@/components/layout/sidebar";
 import { StatsCard } from "@/components/dashboard/stats-card";
 import { RecentActivity } from "@/components/dashboard/recent-activity";
-import { STATS_DATA, RECENT_ACTIVITIES } from "@/lib/constants";
+import { STATS_DATA_CONFIG, RECENT_ACTIVITIES } from "@/lib/constants";
+import { getIcon } from "@/lib/icon-map";
 import { useState } from "react";
 
 export default function DashboardPage() {
@@ -32,13 +33,13 @@ export default function DashboardPage() {
 
             {/* 통계 카드 - 4개 그리드 */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-              {STATS_DATA.map((stat) => (
+              {STATS_DATA_CONFIG.map((stat) => (
                 <StatsCard
                   key={stat.id}
                   title={stat.title}
                   value={stat.value}
                   change={stat.change}
-                  icon={stat.icon}
+                  icon={getIcon(stat.iconId, { className: "w-5 h-5" })}
                 />
               ))}
             </div>

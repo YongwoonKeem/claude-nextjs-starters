@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
-import { FEATURES } from "@/lib/constants";
+import { FEATURES_CONFIG } from "@/lib/constants";
+import { getLargeIcon } from "@/lib/icon-map";
 
 export function FeaturesSection() {
   return (
@@ -15,11 +16,11 @@ export function FeaturesSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {FEATURES.map((feature) => (
+          {FEATURES_CONFIG.map((feature) => (
             <Card key={feature.id} className="p-6 hover:shadow-lg transition-shadow">
               <div className="space-y-4">
                 <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10">
-                  {feature.icon}
+                  {getLargeIcon(feature.iconId)}
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-foreground">

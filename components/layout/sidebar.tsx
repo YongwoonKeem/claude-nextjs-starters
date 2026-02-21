@@ -6,7 +6,8 @@ import { ChevronLeft, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { SIDEBAR_ITEMS } from "@/lib/constants";
+import { SIDEBAR_ITEMS_CONFIG } from "@/lib/constants";
+import { getIcon } from "@/lib/icon-map";
 import { useSidebar } from "@/hooks/use-sidebar";
 import { cn } from "@/lib/utils";
 
@@ -46,7 +47,7 @@ export function Sidebar() {
 
       {/* 네비게이션 아이템 */}
       <nav className="flex-1 space-y-2 overflow-y-auto px-2 py-4">
-        {SIDEBAR_ITEMS.map((item) => {
+        {SIDEBAR_ITEMS_CONFIG.map((item) => {
           const isActive = pathname === item.href;
           return (
             <TooltipProvider key={item.id} delayDuration={300}>
@@ -61,7 +62,7 @@ export function Sidebar() {
                       )}
                       size={isOpen ? "default" : "icon"}
                     >
-                      {item.icon}
+                      {getIcon(item.iconId, { className: "w-5 h-5" })}
                       {isOpen && (
                         <span className="ml-2 truncate">{item.label}</span>
                       )}
